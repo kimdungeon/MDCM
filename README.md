@@ -14,7 +14,7 @@ Please see [here](https://github.com/kimdungeon/MDCM/blob/master/MDCM%20PPT.pdf)
 
 ### Source Data
 
-Our team took the raw csv data from the 2002-2023 tournaments as the primary inputs into our model. We used the 2024 csv data, which contains all possible matchup combinations and outcomes from the 2024 NCAA tournament, to make our predictions. The raw data files can be found [here](https://github.com/kimdungeon/MDCM/tree/master/DATA).
+Our team took the raw csv data from the 2002-2023 tournaments as the primary inputs into our model. We used the 2024 csv data, which contains all possible matchup combinations and outcomes from the 2024 NCAA tournament, to make our predictions. The raw data files can be found [here](([https://github.com/kimdungeon/MDCM/tree/master/DATA](https://github.com/kimdungeon/MDCM/blob/master/MDCM%20Supplemental%20Data_3.19.24.xlsx)).
 
 We also grabbed external data to find more relevant features that could help us with our predictions. The 3 features we added were:
 * Betting Odds: Futures bets from all R64 games from the 2002-2023 NCAA tournaments. This was done to gauge public perception of the expected outcomes.
