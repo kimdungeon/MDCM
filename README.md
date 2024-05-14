@@ -1,5 +1,7 @@
 # 2024 March Data Crunch Madness Competition
 
+<img width="1007" alt="Screenshot 2024-05-14 at 11 37 00 AM" src="https://github.com/kimdungeon/MDCM/assets/147112213/f17276bc-2986-4850-8fd3-00f7d5f43da8">
+
 ## Overview
 
 The purpose of this project was to predict the results of the 2024 NCAA Men's Basketball Tournament using machine learning. My team, The Final Fourmulas, placed third in the 2024 March Data Crunch Madness competition, hosted by Fordham University and Deloitte.
