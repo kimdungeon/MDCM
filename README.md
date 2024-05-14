@@ -16,11 +16,11 @@ Please see [here](https://github.com/kimdungeon/MDCM/blob/master/MDCM%20PPT.pdf)
 
 ### Data Collection
 
-Our team took the raw csv data from the 2002-2023 tournaments as the primary inputs into our model. We used the 2024 csv data, which contains all possible matchup combinations from the 2024 NCAA tournament, to make our predictions. Our goal was to predict the winning probabilities for 'Team1', which is the winning team in a matchup.
+Our team took the raw csv data from the 2002-2023 tournaments as the primary inputs into our model. We used the 2024 csv data, which contains all possible matchup combinations from the 2024 tournament, to make our predictions. Our goal was to calculate the winning probabilities for 'Team1' in each matchup, which corresponds to the winning team.
 
 The raw data files can be found [here](https://github.com/kimdungeon/MDCM/tree/master/DATA).
 
-We also grabbed external data to find more relevant features that could help us with our predictions. The 3 features we added were:
+We also scraped external data to find more relevant features that could help us with our predictions. The 3 features we added were:
 * Betting Odds: Futures bets from all R64 games from the 2002-2023 NCAA tournaments. This was done to gauge public perception of the expected outcomes.
 * Power 6 Teams: Binary variable designating whether a school was in one of the Power 6 conferences (ACC, BE, B10, B12, SEC, PAC). Due to conference realignment, this data was collected by year.
 * All-Americans: The number of All-American players (first team-third team) on a team per year.
@@ -71,4 +71,4 @@ Our model correctly predicted 4 upsets (including 2 #12 seeds beating #5 seeds) 
 
 ## Conclusion
 
-While we ultimately didn't win the competition, I thoroughly enjoyed my experience! This project was an opportunity to apply data science & machine learning to a topic I am extremely passionate about, and we were able to present our findings in innovative and meaningful ways to the audience. I hope that as I develop my skills, I can continue to build upon the success of this model and take on other new, exciting projects as well. Thank you for following me on my journey to becoming a data scientist!
+While we ultimately didn't win the competition, I thoroughly enjoyed my experience! This project was an opportunity to apply data science & machine learning to a topic I am extremely passionate about, and we were able to present our findings in innovative and meaningful ways to the audience. I hope that as I develop my skills, I can continue to build upon the success of this model and take on other new, exciting projects. Thank you for following me on my journey to becoming a data scientist!
