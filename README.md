@@ -16,7 +16,7 @@ Please see [here](https://github.com/kimdungeon/MDCM/blob/master/MDCM%20PPT.pdf)
 
 ### Data Collection
 
-Our team took the raw csv data from the 2002-2023 tournaments as the primary inputs into our model. We used the 2024 csv data, which contains all possible matchup combinations and outcomes from the 2024 NCAA tournament, to make our predictions. Our goal was to predict the winning probabilities for 'Team1', which is the winning team in a matchup.
+Our team took the raw csv data from the 2002-2023 tournaments as the primary inputs into our model. We used the 2024 csv data, which contains all possible matchup combinations from the 2024 NCAA tournament, to make our predictions. Our goal was to predict the winning probabilities for 'Team1', which is the winning team in a matchup.
 
 The raw data files can be found [here](https://github.com/kimdungeon/MDCM/tree/master/DATA).
 
