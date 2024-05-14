@@ -14,7 +14,7 @@ Please see [here](https://github.com/kimdungeon/MDCM/blob/master/MDCM%20PPT.pdf)
 
 ### Data Collection
 
-Our team took the raw csv data from the 2002-2023 tournaments as the primary inputs into our model. We used the 2024 csv data, which contains all possible matchup combinations and outcomes from the 2024 NCAA tournament, to make our predictions. Our goal is to predict the winning probabilities for 'Team1', which is the winning team in the matchup.
+Our team took the raw csv data from the 2002-2023 tournaments as the primary inputs into our model. We used the 2024 csv data, which contains all possible matchup combinations and outcomes from the 2024 NCAA tournament, to make our predictions. Our goal was to predict the winning probabilities for 'Team1', which is the winning team in a matchup.
 
 The raw data files can be found [here](https://github.com/kimdungeon/MDCM/tree/master/DATA).
 
@@ -54,11 +54,9 @@ Our models were trained on all years from 2002-2023 except 2019, which was used 
 <img width="1220" alt="Screenshot 2024-05-13 at 5 33 37 PM" src="https://github.com/kimdungeon/MDCM/assets/147112213/e622fe2c-ac6a-477a-972a-80bf4b857a8c">
 
 
-We moved forward with the Random Forests model to make the predictions for 2024.
-
 ### 2024 Predictions & Betting Model
 
-[Final Fourmulas.csv](https://github.com/kimdungeon/MDCM/blob/master/Final%20Fourmulas.csv) contains the predictions for all possible matchups in the 2024 tournament. The Random Forest model predicted the following teams would make the Final 4:
+We used our Random Forest model to create the [Final Fourmulas.csv](https://github.com/kimdungeon/MDCM/blob/master/Final%20Fourmulas.csv) output file, which contains the winning probabilities for all possible matchups in the 2024 tournament. We predicted the following teams would make the Final 4:
 
   1. **UConn Huskies** (#1 Seed, East)
   2. **Arizona Wildcats** (#2 Seed, West) - **NATIONAL CHAMPION**
