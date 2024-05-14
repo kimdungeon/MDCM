@@ -51,7 +51,7 @@ Definitions for each feature can be found in the Appendix in our presentation.
 Our models were trained on all years from 2002-2023 except 2019, which was used as the testing/validation data. Among various models used, the Random Forest classifier yielded the best results over the testing data:
 
 
-<img width="1220" alt="Screenshot 2024-05-13 at 5 33 37 PM" src="https://github.com/kimdungeon/MDCM/assets/147112213/e622fe2c-ac6a-477a-972a-80bf4b857a8c">
+<img width="909" alt="Screenshot 2024-05-14 at 12 36 26 AM" src="https://github.com/kimdungeon/MDCM/assets/147112213/362e757f-67c7-4f09-90a4-c8825e703c9d">
 
 
 ### 2024 Predictions & Betting Model
