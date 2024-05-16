@@ -1,0 +1,2885 @@
+<?xml version="1.0"?>
+<AlteryxDocument yxmdVer="2022.1">
+  <Nodes>
+    <Node ToolID="1">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+        <Position x="54" y="162" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Passwords />
+          <File OutputFileName="Path" RecordLimit="" SearchSubDirs="False" FileFormat="25">..\Odds.xlsx|||&lt;List of Sheet Names&gt;</File>
+          <FormatSpecificOptions>
+            <FirstRowData>False</FirstRowData>
+            <ImportLine>1</ImportLine>
+          </FormatSpecificOptions>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>Odds.xlsx
+Query=&lt;List of Sheet Names&gt;</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Sheet Names" size="31" source="File: C:\Users\dongeonkim\Documents\MDCM\Odds.xlsx|||&lt;List of Sheet Names&gt;" type="V_WString" />
+            <Field name="FileName" size="254" source="File: FileName" type="V_WString" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+    </Node>
+    <Node ToolID="2">
+      <GuiSettings>
+        <Position x="378" y="162" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Value name="ControlParams"><![CDATA[Control Parameter (2)=Path
+]]></Value>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="OutputData">
+          <RecordInfo>
+            <Field name="SourceRowID" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="F1" size="255" source="File: (Multiple Sources)" type="V_String" />
+            <Field name="F2" size="255" source="File: (Multiple Sources)" type="V_String" />
+            <Field name="F3" size="255" source="File: (Multiple Sources)" type="V_String" />
+            <Field name="FileName" size="254" source="File: FileName" type="V_WString" />
+            <Field name="F4" source="File: (Multiple Sources)" type="Double" />
+            <Field name="F5" source="File: (Multiple Sources)" type="Double" />
+            <Field name="F6" source="File: (Multiple Sources)" type="Double" />
+            <Field name="F7" source="File: (Multiple Sources)" type="Double" />
+            <Field name="F8" source="File: (Multiple Sources)" type="Double" />
+            <Field name="F9" size="626" source="File: (Multiple Sources)" type="V_String" />
+            <Field name="F10" source="File: (Multiple Sources)" type="Double" />
+            <Field name="F11" source="File: C:\Users\dongeonkim\Documents\MDCM\Odds.xlsx|||2020-2021" type="Double" />
+            <Field name="F12" source="File: C:\Users\dongeonkim\Documents\MDCM\Odds.xlsx|||2020-2021" type="Double" />
+            <Field name="F13" source="File: C:\Users\dongeonkim\Documents\MDCM\Odds.xlsx|||2020-2021" type="Double" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings Macro="Macros\InputFile_SheetName.yxmc" />
+    </Node>
+    <Node ToolID="3">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="174" y="162" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="replace([FileName],&quot;&lt;List of Sheet Names&gt;&quot;,[Sheet Names])" field="FileName" size="254" type="V_WString" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText><![CDATA[FileName = replace([FileName],"<List of Sheet Names>",[Sheet Names])
+]]></DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="4">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="282" y="162" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="FileName" selected="True" rename="Path" />
+            <SelectField field="*Unknown" selected="False" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="5">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="462" y="162" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="F1" selected="True" />
+            <SelectField field="F2" selected="True" />
+            <SelectField field="F3" selected="True" />
+            <SelectField field="FileName" selected="True" />
+            <SelectField field="*Unknown" selected="False" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="6">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DynamicRename.DynamicRename">
+        <Position x="558" y="162" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <RenameMode>FirstRow</RenameMode>
+          <Fields orderChanged="False">
+            <Field name="F1" />
+            <Field name="F2" />
+            <Field name="F3" />
+            <Field name="FileName" selected="False" />
+            <Field name="*Unknown" selected="False" />
+          </Fields>
+          <Expression />
+          <FirstRow>
+            <OnError>Warn</OnError>
+          </FirstRow>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Name" size="255" source="File: (Multiple Sources)" type="V_String" />
+            <Field name="Round" size="255" source="File: (Multiple Sources)" type="V_String" />
+            <Field name="Odds" size="255" source="File: (Multiple Sources)" type="V_String" />
+            <Field name="FileName" size="254" source="File: FileName" type="V_WString" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDynamicRename" />
+    </Node>
+    <Node ToolID="7">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="654" y="162" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="right([FileName],4)" field="Year" size="1073741823" type="V_WString" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText><![CDATA[Year = right([FileName],4)
+]]></DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="8">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+        <Position x="750" y="162" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Expression>!IsNull([Name]) and [Name] != "Name"</Expression>
+          <Mode>Custom</Mode>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>!IsNull([Name]) and [Name] != "Name"</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+    </Node>
+    <Node ToolID="9">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="870" y="162" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="Odds" selected="True" type="Double" size="8" />
+            <SelectField field="*Unknown" selected="True" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="15">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+        <Position x="54" y="366" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Passwords />
+          <File RecordLimit="" SearchSubDirs="False" FileFormat="0" OutputFileName="">..\NCAA_Tourney_2002_2022.csv</File>
+          <FormatSpecificOptions>
+            <HeaderRow>True</HeaderRow>
+            <IgnoreErrors>False</IgnoreErrors>
+            <AllowShareWrite>False</AllowShareWrite>
+            <ImportLine>1</ImportLine>
+            <FieldLen>254</FieldLen>
+            <SingleThreadRead>False</SingleThreadRead>
+            <IgnoreQuotes>DoubleQuotes</IgnoreQuotes>
+            <Delimeter>,</Delimeter>
+            <QuoteRecordBreak>False</QuoteRecordBreak>
+            <CodePage>28591</CodePage>
+          </FormatSpecificOptions>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>NCAA_Tourney_2002_2022.csv</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="team1_id" size="254" source="File: C:\Users\dongeonkim\Documents\MDCM\NCAA_Tourney_2002_2022.csv" type="V_String" />
+            <Field name="team1_score" size="254" source="File: C:\Users\dongeonkim\Documents\MDCM\NCAA_Tourney_2002_2022.csv" type="V_String" />
+            <Field name="team2_id" size="254" source="File: C:\Users\dongeonkim\Documents\MDCM\NCAA_Tourney_2002_2022.csv" type="V_String" />
+            <Field name="team2_score" size="254" source="File: C:\Users\dongeonkim\Documents\MDCM\NCAA_Tourney_2002_2022.csv" type="V_String" />
+            <Field name="WLoc" size="254" source="File: C:\Users\dongeonkim\Documents\MDCM\NCAA_Tourney_2002_2022.csv" type="V_String" />
+            <Field name="num_ot" size="254" source="File: C:\Users\dongeonkim\Documents\MDCM\NCAA_Tourney_2002_2022.csv" type="V_String" />
+            <Field name="team1_position" size="254" source="File: C:\Users\dongeonkim\Documents\MDCM\NCAA_Tourney_2002_2022.csv" type="V_String" />
+            <Field name="team2_position" size="254" source="File: C:\Users\dongeonkim\Documents\MDCM\NCAA_Tourney_2002_2022.csv" type="V_String" />
+            <Field name="team1_seed" size="254" source="File: C:\Users\dongeonkim\Documents\MDCM\NCAA_Tourney_2002_2022.csv" type="V_String" />
+            <Field name="team2_seed" size="254" source="File: C:\Users\dongeonkim\Documents\MDCM\NCAA_Tourney_2002_2022.csv" type="V_String" />
+            <Field name="strongseed" size="254" source="File: C:\Users\dongeonkim\Documents\MDCM\NCAA_Tourney_2002_2022.csv" type="V_String" />
+            <Field name="weakseed" size="254" source="File: C:\Users\dongeonkim\Documents\MDCM\NCAA_Tourney_2002_2022.csv" type="V_String" />
+            <Field name="team1_region" size="254" source="File: C:\Users\dongeonkim\Documents\MDCM\NCAA_Tourney_2002_2022.csv" type="V_String" />
+            <Field name="team2_region" size="254" source="File: C:\Users\dongeonkim\Documents\MDCM\NCAA_Tourney_2002_2022.csv" type="V_String" />
+            <Field name="slot" size="254" source="File: C:\Users\dongeonkim\Documents\MDCM\NCAA_Tourney_2002_2022.csv" type="V_String" />
+            <Field name="team1_teamname" size="254" source="File: C:\Users\dongeonkim\Documents\MDCM\NCAA_Tourney_2002_2022.csv" type="V_String" />
+            <Field name="team2_teamname" size="254" source="File: C:\Users\dongeonkim\Documents\MDCM\NCAA_Tourney_2002_2022.csv" type="V_String" />
+            <Field name="season" size="254" source="File: C:\Users\dongeonkim\Documents\MDCM\NCAA_Tourney_2002_2022.csv" type="V_String" />
+            <Field name="host" size="254" source="File: C:\Users\dongeonkim\Documents\MDCM\NCAA_Tourney_2002_2022.csv" type="V_String" />
+            <Field name="host_lat" size="254" source="File: C:\Users\dongeonkim\Documents\MDCM\NCAA_Tourney_2002_2022.csv" type="V_String" />
+            <Field name="host_long" size="254" source="File: C:\Users\dongeonkim\Documents\MDCM\NCAA_Tourney_2002_2022.csv" type="V_String" />
+            <Field name="team1_lat" size="254" source="File: C:\Users\dongeonkim\Documents\MDCM\NCAA_Tourney_2002_2022.csv" type="V_String" />
+            <Field name="team1_long" size="254" source="File: C:\Users\dongeonkim\Documents\MDCM\NCAA_Tourney_2002_2022.csv" type="V_String" />
+            <Field name="team2_lat" size="254" source="File: C:\Users\dongeonkim\Documents\MDCM\NCAA_Tourney_2002_2022.csv" type="V_String" />
+            <Field name="team2_long" size="254" source="File: C:\Users\dongeonkim\Documents\MDCM\NCAA_Tourney_2002_2022.csv" type="V_String" />
+            <Field name="team1_coach_id" size="254" source="File: C:\Users\dongeonkim\Documents\MDCM\NCAA_Tourney_2002_2022.csv" type="V_String" />
+            <Field name="team1_pt_school_ncaa" size="254" source="File: C:\Users\dongeonkim\Documents\MDCM\NCAA_Tourney_2002_2022.csv" type="V_String" />
+            <Field name="team1_pt_overall_ncaa" size="254" source="File: C:\Users\dongeonkim\Documents\MDCM\NCAA_Tourney_2002_2022.csv" type="V_String" />
+            <Field name="team1_pt_school_s16" size="254" source="File: C:\Users\dongeonkim\Documents\MDCM\NCAA_Tourney_2002_2022.csv" type="V_String" />
+            <Field name="team1_pt_overall_s16" size="254" source="File: C:\Users\dongeonkim\Documents\MDCM\NCAA_Tourney_2002_2022.csv" type="V_String" />
+            <Field name="team1_pt_school_ff" size="254" source="File: C:\Users\dongeonkim\Documents\MDCM\NCAA_Tourney_2002_2022.csv" type="V_String" />
+            <Field name="team1_pt_overall_ff" size="254" source="File: C:\Users\dongeonkim\Documents\MDCM\NCAA_Tourney_2002_2022.csv" type="V_String" />
+            <Field name="team1_pt_career_school_wins" size="254" source="File: C:\Users\dongeonkim\Documents\MDCM\NCAA_Tourney_2002_2022.csv" type="V_String" />
+            <Field name="team1_pt_career_school_losses" size="254" source="File: C:\Users\dongeonkim\Documents\MDCM\NCAA_Tourney_2002_2022.csv" type="V_String" />
+            <Field name="team1_pt_career_overall_wins" size="254" source="File: C:\Users\dongeonkim\Documents\MDCM\NCAA_Tourney_2002_2022.csv" type="V_String" />
+            <Field name="team1_pt_career_overall_losses" size="254" source="File: C:\Users\dongeonkim\Documents\MDCM\NCAA_Tourney_2002_2022.csv" type="V_String" />
+            <Field name="team1_pt_team_season_wins" size="254" source="File: C:\Users\dongeonkim\Documents\MDCM\NCAA_Tourney_2002_2022.csv" type="V_String" />
+            <Field name="team1_pt_team_season_losses" size="254" source="File: C:\Users\dongeonkim\Documents\MDCM\NCAA_Tourney_2002_2022.csv" type="V_String" />
+            <Field name="team1_pt_coach_season_wins" size="254" source="File: C:\Users\dongeonkim\Documents\MDCM\NCAA_Tourney_2002_2022.csv" type="V_String" />
+            <Field name="team1_pt_coach_season_losses" size="254" source="File: C:\Users\dongeonkim\Documents\MDCM\NCAA_Tourney_2002_2022.csv" type="V_String" />
+            <Field name="team2_coach_id" size="254" source="File: C:\Users\dongeonkim\Documents\MDCM\NCAA_Tourney_2002_2022.csv" type="V_String" />
+            <Field name="team2_pt_school_ncaa" size="254" source="File: C:\Users\dongeonkim\Documents\MDCM\NCAA_Tourney_2002_2022.csv" type="V_String" />
+            <Field name="team2_pt_overall_ncaa" size="254" source="File: C:\Users\dongeonkim\Documents\MDCM\NCAA_Tourney_2002_2022.csv" type="V_String" />
+            <Field name="team2_pt_school_s16" size="254" source="File: C:\Users\dongeonkim\Documents\MDCM\NCAA_Tourney_2002_2022.csv" type="V_String" />
+            <Field name="team2_pt_overall_s16" size="254" source="File: C:\Users\dongeonkim\Documents\MDCM\NCAA_Tourney_2002_2022.csv" type="V_String" />
+            <Field name="team2_pt_school_ff" size="254" source="File: C:\Users\dongeonkim\Documents\MDCM\NCAA_Tourney_2002_2022.csv" type="V_String" />
+            <Field name="team2_pt_overall_ff" size="254" source="File: C:\Users\dongeonkim\Documents\MDCM\NCAA_Tourney_2002_2022.csv" type="V_String" />
+            <Field name="team2_pt_career_school_wins" size="254" source="File: C:\Users\dongeonkim\Documents\MDCM\NCAA_Tourney_2002_2022.csv" type="V_String" />
+            <Field name="team2_pt_career_school_losses" size="254" source="File: C:\Users\dongeonkim\Documents\MDCM\NCAA_Tourney_2002_2022.csv" type="V_String" />
+            <Field name="team2_pt_career_overall_wins" size="254" source="File: C:\Users\dongeonkim\Documents\MDCM\NCAA_Tourney_2002_2022.csv" type="V_String" />
+            <Field name="team2_pt_career_overall_losses" size="254" source="File: C:\Users\dongeonkim\Documents\MDCM\NCAA_Tourney_2002_2022.csv" type="V_String" />
+            <Field name="team2_pt_team_season_wins" size="254" source="File: C:\Users\dongeonkim\Documents\MDCM\NCAA_Tourney_2002_2022.csv" type="V_String" />
+            <Field name="team2_pt_team_season_losses" size="254" source="File: C:\Users\dongeonkim\Documents\MDCM\NCAA_Tourney_2002_2022.csv" type="V_String" />
+            <Field name="team2_pt_coach_season_wins" size="254" source="File: C:\Users\dongeonkim\Documents\MDCM\NCAA_Tourney_2002_2022.csv" type="V_String" />
+            <Field name="team2_pt_coach_season_losses" size="254" source="File: C:\Users\dongeonkim\Documents\MDCM\NCAA_Tourney_2002_2022.csv" type="V_String" />
+            <Field name="team1_ap_final" size="254" source="File: C:\Users\dongeonkim\Documents\MDCM\NCAA_Tourney_2002_2022.csv" type="V_String" />
+            <Field name="team1_ap_preseason" size="254" source="File: C:\Users\dongeonkim\Documents\MDCM\NCAA_Tourney_2002_2022.csv" type="V_String" />
+            <Field name="team1_coaches_before_final" size="254" source="File: C:\Users\dongeonkim\Documents\MDCM\NCAA_Tourney_2002_2022.csv" type="V_String" />
+            <Field name="team1_coaches_preseason" size="254" source="File: C:\Users\dongeonkim\Documents\MDCM\NCAA_Tourney_2002_2022.csv" type="V_String" />
+            <Field name="team2_ap_final" size="254" source="File: C:\Users\dongeonkim\Documents\MDCM\NCAA_Tourney_2002_2022.csv" type="V_String" />
+            <Field name="team2_ap_preseason" size="254" source="File: C:\Users\dongeonkim\Documents\MDCM\NCAA_Tourney_2002_2022.csv" type="V_String" />
+            <Field name="team2_coaches_before_final" size="254" source="File: C:\Users\dongeonkim\Documents\MDCM\NCAA_Tourney_2002_2022.csv" type="V_String" />
+            <Field name="team2_coaches_preseason" size="254" source="File: C:\Users\dongeonkim\Documents\MDCM\NCAA_Tourney_2002_2022.csv" type="V_String" />
+            <Field name="team1_fg2pct" size="254" source="File: C:\Users\dongeonkim\Documents\MDCM\NCAA_Tourney_2002_2022.csv" type="V_String" />
+            <Field name="team1_fg3pct" size="254" source="File: C:\Users\dongeonkim\Documents\MDCM\NCAA_Tourney_2002_2022.csv" type="V_String" />
+            <Field name="team1_ftpct" size="254" source="File: C:\Users\dongeonkim\Documents\MDCM\NCAA_Tourney_2002_2022.csv" type="V_String" />
+            <Field name="team1_blockpct" size="254" source="File: C:\Users\dongeonkim\Documents\MDCM\NCAA_Tourney_2002_2022.csv" type="V_String" />
+            <Field name="team1_oppfg2pct" size="254" source="File: C:\Users\dongeonkim\Documents\MDCM\NCAA_Tourney_2002_2022.csv" type="V_String" />
+            <Field name="team1_oppfg3pct" size="254" source="File: C:\Users\dongeonkim\Documents\MDCM\NCAA_Tourney_2002_2022.csv" type="V_String" />
+            <Field name="team1_oppftpct" size="254" source="File: C:\Users\dongeonkim\Documents\MDCM\NCAA_Tourney_2002_2022.csv" type="V_String" />
+            <Field name="team1_oppblockpct" size="254" source="File: C:\Users\dongeonkim\Documents\MDCM\NCAA_Tourney_2002_2022.csv" type="V_String" />
+            <Field name="team1_f3grate" size="254" source="File: C:\Users\dongeonkim\Documents\MDCM\NCAA_Tourney_2002_2022.csv" type="V_String" />
+            <Field name="team1_oppf3grate" size="254" source="File: C:\Users\dongeonkim\Documents\MDCM\NCAA_Tourney_2002_2022.csv" type="V_String" />
+            <Field name="team1_arate" size="254" source="File: C:\Users\dongeonkim\Documents\MDCM\NCAA_Tourney_2002_2022.csv" type="V_String" />
+            <Field name="team1_opparate" size="254" source="File: C:\Users\dongeonkim\Documents\MDCM\NCAA_Tourney_2002_2022.csv" type="V_String" />
+            <Field name="team1_stlrate" size="254" source="File: C:\Users\dongeonkim\Documents\MDCM\NCAA_Tourney_2002_2022.csv" type="V_String" />
+            <Field name="team1_oppstlrate" size="254" source="File: C:\Users\dongeonkim\Documents\MDCM\NCAA_Tourney_2002_2022.csv" type="V_String" />
+            <Field name="team2_fg2pct" size="254" source="File: C:\Users\dongeonkim\Documents\MDCM\NCAA_Tourney_2002_2022.csv" type="V_String" />
+            <Field name="team2_fg3pct" size="254" source="File: C:\Users\dongeonkim\Documents\MDCM\NCAA_Tourney_2002_2022.csv" type="V_String" />
+            <Field name="team2_ftpct" size="254" source="File: C:\Users\dongeonkim\Documents\MDCM\NCAA_Tourney_2002_2022.csv" type="V_String" />
+            <Field name="team2_blockpct" size="254" source="File: C:\Users\dongeonkim\Documents\MDCM\NCAA_Tourney_2002_2022.csv" type="V_String" />
+            <Field name="team2_oppfg2pct" size="254" source="File: C:\Users\dongeonkim\Documents\MDCM\NCAA_Tourney_2002_2022.csv" type="V_String" />
+            <Field name="team2_oppfg3pct" size="254" source="File: C:\Users\dongeonkim\Documents\MDCM\NCAA_Tourney_2002_2022.csv" type="V_String" />
+            <Field name="team2_oppftpct" size="254" source="File: C:\Users\dongeonkim\Documents\MDCM\NCAA_Tourney_2002_2022.csv" type="V_String" />
+            <Field name="team2_oppblockpct" size="254" source="File: C:\Users\dongeonkim\Documents\MDCM\NCAA_Tourney_2002_2022.csv" type="V_String" />
+            <Field name="team2_f3grate" size="254" source="File: C:\Users\dongeonkim\Documents\MDCM\NCAA_Tourney_2002_2022.csv" type="V_String" />
+            <Field name="team2_oppf3grate" size="254" source="File: C:\Users\dongeonkim\Documents\MDCM\NCAA_Tourney_2002_2022.csv" type="V_String" />
+            <Field name="team2_arate" size="254" source="File: C:\Users\dongeonkim\Documents\MDCM\NCAA_Tourney_2002_2022.csv" type="V_String" />
+            <Field name="team2_opparate" size="254" source="File: C:\Users\dongeonkim\Documents\MDCM\NCAA_Tourney_2002_2022.csv" type="V_String" />
+            <Field name="team2_stlrate" size="254" source="File: C:\Users\dongeonkim\Documents\MDCM\NCAA_Tourney_2002_2022.csv" type="V_String" />
+            <Field name="team2_oppstlrate" size="254" source="File: C:\Users\dongeonkim\Documents\MDCM\NCAA_Tourney_2002_2022.csv" type="V_String" />
+            <Field name="team1_tempo" size="254" source="File: C:\Users\dongeonkim\Documents\MDCM\NCAA_Tourney_2002_2022.csv" type="V_String" />
+            <Field name="team1_adjtempo" size="254" source="File: C:\Users\dongeonkim\Documents\MDCM\NCAA_Tourney_2002_2022.csv" type="V_String" />
+            <Field name="team1_oe" size="254" source="File: C:\Users\dongeonkim\Documents\MDCM\NCAA_Tourney_2002_2022.csv" type="V_String" />
+            <Field name="team1_adjoe" size="254" source="File: C:\Users\dongeonkim\Documents\MDCM\NCAA_Tourney_2002_2022.csv" type="V_String" />
+            <Field name="team1_de" size="254" source="File: C:\Users\dongeonkim\Documents\MDCM\NCAA_Tourney_2002_2022.csv" type="V_String" />
+            <Field name="team1_adjde" size="254" source="File: C:\Users\dongeonkim\Documents\MDCM\NCAA_Tourney_2002_2022.csv" type="V_String" />
+            <Field name="team2_tempo" size="254" source="File: C:\Users\dongeonkim\Documents\MDCM\NCAA_Tourney_2002_2022.csv" type="V_String" />
+            <Field name="team2_adjtempo" size="254" source="File: C:\Users\dongeonkim\Documents\MDCM\NCAA_Tourney_2002_2022.csv" type="V_String" />
+            <Field name="team2_oe" size="254" source="File: C:\Users\dongeonkim\Documents\MDCM\NCAA_Tourney_2002_2022.csv" type="V_String" />
+            <Field name="team2_adjoe" size="254" source="File: C:\Users\dongeonkim\Documents\MDCM\NCAA_Tourney_2002_2022.csv" type="V_String" />
+            <Field name="team2_de" size="254" source="File: C:\Users\dongeonkim\Documents\MDCM\NCAA_Tourney_2002_2022.csv" type="V_String" />
+            <Field name="team2_adjde" size="254" source="File: C:\Users\dongeonkim\Documents\MDCM\NCAA_Tourney_2002_2022.csv" type="V_String" />
+            <Field name="game_id" size="254" source="File: C:\Users\dongeonkim\Documents\MDCM\NCAA_Tourney_2002_2022.csv" type="V_String" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+    </Node>
+    <Node ToolID="16">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+        <Position x="54" y="486" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Passwords />
+          <File RecordLimit="" SearchSubDirs="False" FileFormat="0" OutputFileName="">..\NCAA_Tourney_2023.csv</File>
+          <FormatSpecificOptions>
+            <HeaderRow>True</HeaderRow>
+            <IgnoreErrors>False</IgnoreErrors>
+            <AllowShareWrite>False</AllowShareWrite>
+            <ImportLine>1</ImportLine>
+            <FieldLen>254</FieldLen>
+            <SingleThreadRead>False</SingleThreadRead>
+            <IgnoreQuotes>DoubleQuotes</IgnoreQuotes>
+            <Delimeter>,</Delimeter>
+            <QuoteRecordBreak>False</QuoteRecordBreak>
+            <CodePage>28591</CodePage>
+          </FormatSpecificOptions>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>NCAA_Tourney_2023.csv</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="game_id" size="254" source="File: C:\Users\dongeonkim\Documents\MDCM\NCAA_Tourney_2023.csv" type="V_String" />
+            <Field name="team1_id" size="254" source="File: C:\Users\dongeonkim\Documents\MDCM\NCAA_Tourney_2023.csv" type="V_String" />
+            <Field name="team2_id" size="254" source="File: C:\Users\dongeonkim\Documents\MDCM\NCAA_Tourney_2023.csv" type="V_String" />
+            <Field name="season" size="254" source="File: C:\Users\dongeonkim\Documents\MDCM\NCAA_Tourney_2023.csv" type="V_String" />
+            <Field name="team1_seed" size="254" source="File: C:\Users\dongeonkim\Documents\MDCM\NCAA_Tourney_2023.csv" type="V_String" />
+            <Field name="team2_seed" size="254" source="File: C:\Users\dongeonkim\Documents\MDCM\NCAA_Tourney_2023.csv" type="V_String" />
+            <Field name="team1_position" size="254" source="File: C:\Users\dongeonkim\Documents\MDCM\NCAA_Tourney_2023.csv" type="V_String" />
+            <Field name="team2_position" size="254" source="File: C:\Users\dongeonkim\Documents\MDCM\NCAA_Tourney_2023.csv" type="V_String" />
+            <Field name="strongseed" size="254" source="File: C:\Users\dongeonkim\Documents\MDCM\NCAA_Tourney_2023.csv" type="V_String" />
+            <Field name="weakseed" size="254" source="File: C:\Users\dongeonkim\Documents\MDCM\NCAA_Tourney_2023.csv" type="V_String" />
+            <Field name="team1_region" size="254" source="File: C:\Users\dongeonkim\Documents\MDCM\NCAA_Tourney_2023.csv" type="V_String" />
+            <Field name="team2_region" size="254" source="File: C:\Users\dongeonkim\Documents\MDCM\NCAA_Tourney_2023.csv" type="V_String" />
+            <Field name="slot" size="254" source="File: C:\Users\dongeonkim\Documents\MDCM\NCAA_Tourney_2023.csv" type="V_String" />
+            <Field name="host" size="254" source="File: C:\Users\dongeonkim\Documents\MDCM\NCAA_Tourney_2023.csv" type="V_String" />
+            <Field name="host_lat" size="254" source="File: C:\Users\dongeonkim\Documents\MDCM\NCAA_Tourney_2023.csv" type="V_String" />
+            <Field name="host_long" size="254" source="File: C:\Users\dongeonkim\Documents\MDCM\NCAA_Tourney_2023.csv" type="V_String" />
+            <Field name="team1_teamname" size="254" source="File: C:\Users\dongeonkim\Documents\MDCM\NCAA_Tourney_2023.csv" type="V_String" />
+            <Field name="team2_teamname" size="254" source="File: C:\Users\dongeonkim\Documents\MDCM\NCAA_Tourney_2023.csv" type="V_String" />
+            <Field name="team1_coach_id" size="254" source="File: C:\Users\dongeonkim\Documents\MDCM\NCAA_Tourney_2023.csv" type="V_String" />
+            <Field name="team1_coach_name" size="254" source="File: C:\Users\dongeonkim\Documents\MDCM\NCAA_Tourney_2023.csv" type="V_String" />
+            <Field name="team1_pt_school_ncaa" size="254" source="File: C:\Users\dongeonkim\Documents\MDCM\NCAA_Tourney_2023.csv" type="V_String" />
+            <Field name="team1_pt_overall_ncaa" size="254" source="File: C:\Users\dongeonkim\Documents\MDCM\NCAA_Tourney_2023.csv" type="V_String" />
+            <Field name="team1_pt_school_s16" size="254" source="File: C:\Users\dongeonkim\Documents\MDCM\NCAA_Tourney_2023.csv" type="V_String" />
+            <Field name="team1_pt_overall_s16" size="254" source="File: C:\Users\dongeonkim\Documents\MDCM\NCAA_Tourney_2023.csv" type="V_String" />
+            <Field name="team1_pt_school_ff" size="254" source="File: C:\Users\dongeonkim\Documents\MDCM\NCAA_Tourney_2023.csv" type="V_String" />
+            <Field name="team1_pt_overall_ff" size="254" source="File: C:\Users\dongeonkim\Documents\MDCM\NCAA_Tourney_2023.csv" type="V_String" />
+            <Field name="team1_pt_career_school_wins" size="254" source="File: C:\Users\dongeonkim\Documents\MDCM\NCAA_Tourney_2023.csv" type="V_String" />
+            <Field name="team1_pt_career_school_losses" size="254" source="File: C:\Users\dongeonkim\Documents\MDCM\NCAA_Tourney_2023.csv" type="V_String" />
+            <Field name="team1_pt_career_overall_losses" size="254" source="File: C:\Users\dongeonkim\Documents\MDCM\NCAA_Tourney_2023.csv" type="V_String" />
+            <Field name="team1_pt_team_season_wins" size="254" source="File: C:\Users\dongeonkim\Documents\MDCM\NCAA_Tourney_2023.csv" type="V_String" />
+            <Field name="team1_pt_team_season_losses" size="254" source="File: C:\Users\dongeonkim\Documents\MDCM\NCAA_Tourney_2023.csv" type="V_String" />
+            <Field name="team1_pt_coach_season_wins" size="254" source="File: C:\Users\dongeonkim\Documents\MDCM\NCAA_Tourney_2023.csv" type="V_String" />
+            <Field name="team1_pt_coach_season_losses" size="254" source="File: C:\Users\dongeonkim\Documents\MDCM\NCAA_Tourney_2023.csv" type="V_String" />
+            <Field name="team1_pt_career_overall_wins" size="254" source="File: C:\Users\dongeonkim\Documents\MDCM\NCAA_Tourney_2023.csv" type="V_String" />
+            <Field name="team2_coach_id" size="254" source="File: C:\Users\dongeonkim\Documents\MDCM\NCAA_Tourney_2023.csv" type="V_String" />
+            <Field name="team2_coach_name" size="254" source="File: C:\Users\dongeonkim\Documents\MDCM\NCAA_Tourney_2023.csv" type="V_String" />
+            <Field name="team2_pt_school_ncaa" size="254" source="File: C:\Users\dongeonkim\Documents\MDCM\NCAA_Tourney_2023.csv" type="V_String" />
+            <Field name="team2_pt_overall_ncaa" size="254" source="File: C:\Users\dongeonkim\Documents\MDCM\NCAA_Tourney_2023.csv" type="V_String" />
+            <Field name="team2_pt_school_s16" size="254" source="File: C:\Users\dongeonkim\Documents\MDCM\NCAA_Tourney_2023.csv" type="V_String" />
+            <Field name="team2_pt_overall_s16" size="254" source="File: C:\Users\dongeonkim\Documents\MDCM\NCAA_Tourney_2023.csv" type="V_String" />
+            <Field name="team2_pt_school_ff" size="254" source="File: C:\Users\dongeonkim\Documents\MDCM\NCAA_Tourney_2023.csv" type="V_String" />
+            <Field name="team2_pt_overall_ff" size="254" source="File: C:\Users\dongeonkim\Documents\MDCM\NCAA_Tourney_2023.csv" type="V_String" />
+            <Field name="team2_pt_career_school_wins" size="254" source="File: C:\Users\dongeonkim\Documents\MDCM\NCAA_Tourney_2023.csv" type="V_String" />
+            <Field name="team2_pt_career_school_losses" size="254" source="File: C:\Users\dongeonkim\Documents\MDCM\NCAA_Tourney_2023.csv" type="V_String" />
+            <Field name="team2_pt_career_overall_losses" size="254" source="File: C:\Users\dongeonkim\Documents\MDCM\NCAA_Tourney_2023.csv" type="V_String" />
+            <Field name="team2_pt_team_season_wins" size="254" source="File: C:\Users\dongeonkim\Documents\MDCM\NCAA_Tourney_2023.csv" type="V_String" />
+            <Field name="team2_pt_team_season_losses" size="254" source="File: C:\Users\dongeonkim\Documents\MDCM\NCAA_Tourney_2023.csv" type="V_String" />
+            <Field name="team2_pt_coach_season_wins" size="254" source="File: C:\Users\dongeonkim\Documents\MDCM\NCAA_Tourney_2023.csv" type="V_String" />
+            <Field name="team2_pt_coach_season_losses" size="254" source="File: C:\Users\dongeonkim\Documents\MDCM\NCAA_Tourney_2023.csv" type="V_String" />
+            <Field name="team2_pt_career_overall_wins" size="254" source="File: C:\Users\dongeonkim\Documents\MDCM\NCAA_Tourney_2023.csv" type="V_String" />
+            <Field name="team1_fg2pct" size="254" source="File: C:\Users\dongeonkim\Documents\MDCM\NCAA_Tourney_2023.csv" type="V_String" />
+            <Field name="team1_fg3pct" size="254" source="File: C:\Users\dongeonkim\Documents\MDCM\NCAA_Tourney_2023.csv" type="V_String" />
+            <Field name="team1_ftpct" size="254" source="File: C:\Users\dongeonkim\Documents\MDCM\NCAA_Tourney_2023.csv" type="V_String" />
+            <Field name="team1_blockpct" size="254" source="File: C:\Users\dongeonkim\Documents\MDCM\NCAA_Tourney_2023.csv" type="V_String" />
+            <Field name="team1_oppfg2pct" size="254" source="File: C:\Users\dongeonkim\Documents\MDCM\NCAA_Tourney_2023.csv" type="V_String" />
+            <Field name="team1_oppfg3pct" size="254" source="File: C:\Users\dongeonkim\Documents\MDCM\NCAA_Tourney_2023.csv" type="V_String" />
+            <Field name="team1_oppftpct" size="254" source="File: C:\Users\dongeonkim\Documents\MDCM\NCAA_Tourney_2023.csv" type="V_String" />
+            <Field name="team1_oppblockpct" size="254" source="File: C:\Users\dongeonkim\Documents\MDCM\NCAA_Tourney_2023.csv" type="V_String" />
+            <Field name="team1_f3grate" size="254" source="File: C:\Users\dongeonkim\Documents\MDCM\NCAA_Tourney_2023.csv" type="V_String" />
+            <Field name="team1_oppf3grate" size="254" source="File: C:\Users\dongeonkim\Documents\MDCM\NCAA_Tourney_2023.csv" type="V_String" />
+            <Field name="team1_arate" size="254" source="File: C:\Users\dongeonkim\Documents\MDCM\NCAA_Tourney_2023.csv" type="V_String" />
+            <Field name="team1_opparate" size="254" source="File: C:\Users\dongeonkim\Documents\MDCM\NCAA_Tourney_2023.csv" type="V_String" />
+            <Field name="team1_stlrate" size="254" source="File: C:\Users\dongeonkim\Documents\MDCM\NCAA_Tourney_2023.csv" type="V_String" />
+            <Field name="team1_oppstlrate" size="254" source="File: C:\Users\dongeonkim\Documents\MDCM\NCAA_Tourney_2023.csv" type="V_String" />
+            <Field name="team2_fg2pct" size="254" source="File: C:\Users\dongeonkim\Documents\MDCM\NCAA_Tourney_2023.csv" type="V_String" />
+            <Field name="team2_fg3pct" size="254" source="File: C:\Users\dongeonkim\Documents\MDCM\NCAA_Tourney_2023.csv" type="V_String" />
+            <Field name="team2_ftpct" size="254" source="File: C:\Users\dongeonkim\Documents\MDCM\NCAA_Tourney_2023.csv" type="V_String" />
+            <Field name="team2_blockpct" size="254" source="File: C:\Users\dongeonkim\Documents\MDCM\NCAA_Tourney_2023.csv" type="V_String" />
+            <Field name="team2_oppfg2pct" size="254" source="File: C:\Users\dongeonkim\Documents\MDCM\NCAA_Tourney_2023.csv" type="V_String" />
+            <Field name="team2_oppfg3pct" size="254" source="File: C:\Users\dongeonkim\Documents\MDCM\NCAA_Tourney_2023.csv" type="V_String" />
+            <Field name="team2_oppftpct" size="254" source="File: C:\Users\dongeonkim\Documents\MDCM\NCAA_Tourney_2023.csv" type="V_String" />
+            <Field name="team2_oppblockpct" size="254" source="File: C:\Users\dongeonkim\Documents\MDCM\NCAA_Tourney_2023.csv" type="V_String" />
+            <Field name="team2_f3grate" size="254" source="File: C:\Users\dongeonkim\Documents\MDCM\NCAA_Tourney_2023.csv" type="V_String" />
+            <Field name="team2_oppf3grate" size="254" source="File: C:\Users\dongeonkim\Documents\MDCM\NCAA_Tourney_2023.csv" type="V_String" />
+            <Field name="team2_arate" size="254" source="File: C:\Users\dongeonkim\Documents\MDCM\NCAA_Tourney_2023.csv" type="V_String" />
+            <Field name="team2_opparate" size="254" source="File: C:\Users\dongeonkim\Documents\MDCM\NCAA_Tourney_2023.csv" type="V_String" />
+            <Field name="team2_stlrate" size="254" source="File: C:\Users\dongeonkim\Documents\MDCM\NCAA_Tourney_2023.csv" type="V_String" />
+            <Field name="team2_oppstlrate" size="254" source="File: C:\Users\dongeonkim\Documents\MDCM\NCAA_Tourney_2023.csv" type="V_String" />
+            <Field name="team1_tempo" size="254" source="File: C:\Users\dongeonkim\Documents\MDCM\NCAA_Tourney_2023.csv" type="V_String" />
+            <Field name="team1_adjtempo" size="254" source="File: C:\Users\dongeonkim\Documents\MDCM\NCAA_Tourney_2023.csv" type="V_String" />
+            <Field name="team1_oe" size="254" source="File: C:\Users\dongeonkim\Documents\MDCM\NCAA_Tourney_2023.csv" type="V_String" />
+            <Field name="team1_adjoe" size="254" source="File: C:\Users\dongeonkim\Documents\MDCM\NCAA_Tourney_2023.csv" type="V_String" />
+            <Field name="team1_de" size="254" source="File: C:\Users\dongeonkim\Documents\MDCM\NCAA_Tourney_2023.csv" type="V_String" />
+            <Field name="team1_adjde" size="254" source="File: C:\Users\dongeonkim\Documents\MDCM\NCAA_Tourney_2023.csv" type="V_String" />
+            <Field name="team2_tempo" size="254" source="File: C:\Users\dongeonkim\Documents\MDCM\NCAA_Tourney_2023.csv" type="V_String" />
+            <Field name="team2_adjtempo" size="254" source="File: C:\Users\dongeonkim\Documents\MDCM\NCAA_Tourney_2023.csv" type="V_String" />
+            <Field name="team2_oe" size="254" source="File: C:\Users\dongeonkim\Documents\MDCM\NCAA_Tourney_2023.csv" type="V_String" />
+            <Field name="team2_adjoe" size="254" source="File: C:\Users\dongeonkim\Documents\MDCM\NCAA_Tourney_2023.csv" type="V_String" />
+            <Field name="team2_de" size="254" source="File: C:\Users\dongeonkim\Documents\MDCM\NCAA_Tourney_2023.csv" type="V_String" />
+            <Field name="team2_adjde" size="254" source="File: C:\Users\dongeonkim\Documents\MDCM\NCAA_Tourney_2023.csv" type="V_String" />
+            <Field name="team1_lat" size="254" source="File: C:\Users\dongeonkim\Documents\MDCM\NCAA_Tourney_2023.csv" type="V_String" />
+            <Field name="team1_long" size="254" source="File: C:\Users\dongeonkim\Documents\MDCM\NCAA_Tourney_2023.csv" type="V_String" />
+            <Field name="team2_lat" size="254" source="File: C:\Users\dongeonkim\Documents\MDCM\NCAA_Tourney_2023.csv" type="V_String" />
+            <Field name="team2_long" size="254" source="File: C:\Users\dongeonkim\Documents\MDCM\NCAA_Tourney_2023.csv" type="V_String" />
+            <Field name="team1_coaches_preseason" size="254" source="File: C:\Users\dongeonkim\Documents\MDCM\NCAA_Tourney_2023.csv" type="V_String" />
+            <Field name="team2_coaches_preseason" size="254" source="File: C:\Users\dongeonkim\Documents\MDCM\NCAA_Tourney_2023.csv" type="V_String" />
+            <Field name="team1_ap_preseason" size="254" source="File: C:\Users\dongeonkim\Documents\MDCM\NCAA_Tourney_2023.csv" type="V_String" />
+            <Field name="team2_ap_preseason" size="254" source="File: C:\Users\dongeonkim\Documents\MDCM\NCAA_Tourney_2023.csv" type="V_String" />
+            <Field name="team1_coaches_final" size="254" source="File: C:\Users\dongeonkim\Documents\MDCM\NCAA_Tourney_2023.csv" type="V_String" />
+            <Field name="team2_coaches_final" size="254" source="File: C:\Users\dongeonkim\Documents\MDCM\NCAA_Tourney_2023.csv" type="V_String" />
+            <Field name="team1_ap_final" size="254" source="File: C:\Users\dongeonkim\Documents\MDCM\NCAA_Tourney_2023.csv" type="V_String" />
+            <Field name="team2_ap_final" size="254" source="File: C:\Users\dongeonkim\Documents\MDCM\NCAA_Tourney_2023.csv" type="V_String" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+    </Node>
+    <Node ToolID="28">
+      <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
+        <Position x="198" y="342" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <SummarizeFields>
+            <SummarizeField field="team1_teamname" action="GroupBy" rename="teamname" />
+            <SummarizeField field="team1_id" action="GroupBy" rename="id" />
+          </SummarizeFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxSpatialPluginsEngine.dll" EngineDllEntryPoint="AlteryxSummarize" />
+    </Node>
+    <Node ToolID="29">
+      <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
+        <Position x="198" y="402" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <SummarizeFields>
+            <SummarizeField field="team2_teamname" action="GroupBy" rename="teamname" />
+            <SummarizeField field="team2_id" action="GroupBy" rename="id" />
+          </SummarizeFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxSpatialPluginsEngine.dll" EngineDllEntryPoint="AlteryxSummarize" />
+    </Node>
+    <Node ToolID="30">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Union.Union">
+        <Position x="342" y="366" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <ByName_ErrorMode>Warning</ByName_ErrorMode>
+          <ByName_OutputMode>All</ByName_OutputMode>
+          <Mode>ByName</Mode>
+          <SetOutputOrder value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxUnion" />
+    </Node>
+    <Node ToolID="31">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Sort.Sort">
+        <Position x="438" y="366" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <SortInfo locale="1033">
+            <Field field="teamname" order="Ascending" />
+          </SortInfo>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>teamname - Ascending</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSort" />
+    </Node>
+    <Node ToolID="32">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Unique.Unique">
+        <Position x="522" y="366" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <UniqueFields>
+            <Field field="teamname" />
+            <Field field="id" />
+          </UniqueFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxUnique" />
+    </Node>
+    <Node ToolID="33">
+      <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
+        <Position x="198" y="474" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <SummarizeFields>
+            <SummarizeField field="team1_teamname" action="GroupBy" rename="teamname" />
+            <SummarizeField field="team1_id" action="GroupBy" rename="id" />
+          </SummarizeFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxSpatialPluginsEngine.dll" EngineDllEntryPoint="AlteryxSummarize" />
+    </Node>
+    <Node ToolID="34">
+      <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
+        <Position x="198" y="534" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <SummarizeFields>
+            <SummarizeField field="team2_teamname" action="GroupBy" rename="teamname" />
+            <SummarizeField field="team2_id" action="GroupBy" rename="id" />
+          </SummarizeFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxSpatialPluginsEngine.dll" EngineDllEntryPoint="AlteryxSummarize" />
+    </Node>
+    <Node ToolID="46">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+        <Position x="978" y="162" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Mode>Simple</Mode>
+          <Simple>
+            <Operator>=</Operator>
+            <Field>Round</Field>
+            <Operands>
+              <IgnoreTimeInDateTime>True</IgnoreTimeInDateTime>
+              <DateType>fixed</DateType>
+              <PeriodDate>2024-03-01 18:19:44</PeriodDate>
+              <PeriodType>
+              </PeriodType>
+              <PeriodCount>0</PeriodCount>
+              <Operand>R1</Operand>
+              <StartDate>2024-03-01 18:19:44</StartDate>
+              <EndDate>2024-03-01 18:19:44</EndDate>
+            </Operands>
+          </Simple>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>[Round] = "R1"</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+    </Node>
+    <Node ToolID="50">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Sort.Sort">
+        <Position x="1098" y="162" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <SortInfo locale="1033">
+            <Field field="Name" order="Ascending" />
+          </SortInfo>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>Name - Ascending</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSort" />
+    </Node>
+    <Node ToolID="61">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Sort.Sort">
+        <Position x="630" y="354" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <SortInfo locale="1033">
+            <Field field="teamname" order="Ascending" />
+          </SortInfo>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>teamname - Ascending</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSort" />
+    </Node>
+    <Node ToolID="73">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
+        <Position x="1278" y="258" />
+      </GuiSettings>
+      <Properties>
+        <Configuration joinByRecordPos="False">
+          <JoinInfo connection="Left">
+            <Field field="Name" />
+          </JoinInfo>
+          <JoinInfo connection="Right">
+            <Field field="teamname" />
+          </JoinInfo>
+          <SelectConfiguration>
+            <Configuration outputConnection="Join">
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+          </SelectConfiguration>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJoin" />
+    </Node>
+    <Node ToolID="75">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="726" y="354" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="if right([teamname],2) = &quot;St&quot; then replace([teamname],&quot;St&quot;,&quot;State&quot;)&#xA;else [teamname] endif" field="teamname" size="254" type="V_String" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>teamname = if right([teamname],2) = "St" then replace([teamname],"St","State")
+e...</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="77">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.TextInput.TextInput">
+        <Position x="1410" y="318" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <NumRows value="82" />
+          <Fields>
+            <Field name="teamname" />
+            <Field name="id" />
+            <Field name="teamname_edited" />
+          </Fields>
+          <Data>
+            <r>
+              <c>Abilene Chr</c>
+              <c>1101</c>
+              <c>Abilene Christian</c>
+            </r>
+            <r>
+              <c>Alabama A&amp;M</c>
+              <c>1105</c>
+              <c>Alabama A&amp;M</c>
+            </r>
+            <r>
+              <c>Albany NY</c>
+              <c>1107</c>
+              <c>Albany</c>
+            </r>
+            <r>
+              <c>Alcorn State</c>
+              <c>1108</c>
+              <c>Alcorn State</c>
+            </r>
+            <r>
+              <c>American Univ</c>
+              <c>1110</c>
+              <c>American</c>
+            </r>
+            <r>
+              <c>Ark Little Rock</c>
+              <c>1114</c>
+              <c>Arkansas-Little Rock</c>
+            </r>
+            <r>
+              <c>Ark Pine Bluff</c>
+              <c>1115</c>
+              <c>Arkansas-Pine Bluff</c>
+            </r>
+            <r>
+              <c>Binghamton</c>
+              <c>1127</c>
+              <c>Binghampton</c>
+            </r>
+            <r>
+              <c>Boston Univ</c>
+              <c>1131</c>
+              <c>Boston U</c>
+            </r>
+            <r>
+              <c>Boston Univ</c>
+              <c>1131</c>
+              <c>Boston University</c>
+            </r>
+            <r>
+              <c>C Michigan</c>
+              <c>1141</c>
+              <c>Central Michigan</c>
+            </r>
+            <r>
+              <c>Cal Poly SLO</c>
+              <c>1142</c>
+              <c>Cal Poly</c>
+            </r>
+            <r>
+              <c>Central Conn</c>
+              <c>1148</c>
+              <c>Central Connecticut</c>
+            </r>
+            <r>
+              <c>Coastal Car</c>
+              <c>1157</c>
+              <c>Coastal Carolina</c>
+            </r>
+            <r>
+              <c>Col Charleston</c>
+              <c>1158</c>
+              <c>College of Charleston</c>
+            </r>
+            <r>
+              <c>Detroit</c>
+              <c>1178</c>
+              <c>Detroit</c>
+            </r>
+            <r>
+              <c>E Kentucky</c>
+              <c>1184</c>
+              <c>Eastern Kentucky</c>
+            </r>
+            <r>
+              <c>E Washington</c>
+              <c>1186</c>
+              <c>Eastern Washington</c>
+            </r>
+            <r>
+              <c>ETSU</c>
+              <c>1190</c>
+              <c>East Tennessee State</c>
+            </r>
+            <r>
+              <c>F Dickinson</c>
+              <c>1192</c>
+              <c>Fairleigh Dickinson</c>
+            </r>
+            <r>
+              <c>FL Atlantic</c>
+              <c>1194</c>
+              <c>Florida Atlantic</c>
+            </r>
+            <r>
+              <c>FL Gulf Coast</c>
+              <c>1195</c>
+              <c>Florida Gulf Coast</c>
+            </r>
+            <r>
+              <c>G Washington</c>
+              <c>1203</c>
+              <c>George Washington</c>
+            </r>
+            <r>
+              <c>Gardner Webb</c>
+              <c>1205</c>
+              <c>Gardner-Webb</c>
+            </r>
+            <r>
+              <c>IL Chicago</c>
+              <c>1227</c>
+              <c>Illinois-Chicago</c>
+            </r>
+            <r>
+              <c>James Madison</c>
+              <c>1241</c>
+              <c>James Madison</c>
+            </r>
+            <r>
+              <c>Kennesaw</c>
+              <c>1244</c>
+              <c>Kennesaw State</c>
+            </r>
+            <r>
+              <c>Kent</c>
+              <c>1245</c>
+              <c>Kent State</c>
+            </r>
+            <r>
+              <c>Lamar</c>
+              <c>1249</c>
+              <c>Lamar</c>
+            </r>
+            <r>
+              <c>Loyola MD</c>
+              <c>1259</c>
+              <c>Loyola MD</c>
+            </r>
+            <r>
+              <c>Loyola-Chicago</c>
+              <c>1260</c>
+              <c>Loyola Chicago</c>
+            </r>
+            <r>
+              <c>Massachusetts</c>
+              <c>1269</c>
+              <c>U Mass</c>
+            </r>
+            <r>
+              <c>Mercer</c>
+              <c>1273</c>
+              <c>Mercer</c>
+            </r>
+            <r>
+              <c>Miami FL</c>
+              <c>1274</c>
+              <c>Miami (FL)</c>
+            </r>
+            <r>
+              <c>Miami OH</c>
+              <c>1275</c>
+              <c>Miami, Ohio</c>
+            </r>
+            <r>
+              <c>Mississippi</c>
+              <c>1279</c>
+              <c>Ole Miss</c>
+            </r>
+            <r>
+              <c>Monmouth NJ</c>
+              <c>1284</c>
+              <c>Monmouth</c>
+            </r>
+            <r>
+              <c>MS Valley State</c>
+              <c>1290</c>
+              <c>Mississippi Valley State</c>
+            </r>
+            <r>
+              <c>Mt St Mary's</c>
+              <c>1291</c>
+              <c>Mount St Mary's</c>
+            </r>
+            <r>
+              <c>MTSU</c>
+              <c>1292</c>
+              <c>Middle Tennessee State</c>
+            </r>
+            <r>
+              <c>N Colorado</c>
+              <c>1294</c>
+              <c>Northern Colorado</c>
+            </r>
+            <r>
+              <c>N Dakota State</c>
+              <c>1295</c>
+              <c>North Dakota State</c>
+            </r>
+            <r>
+              <c>N Kentucky</c>
+              <c>1297</c>
+              <c>Northern Kentucky</c>
+            </r>
+            <r>
+              <c>NC A&amp;T</c>
+              <c>1299</c>
+              <c>North Carolina A&amp;T</c>
+            </r>
+            <r>
+              <c>Northwestern LA</c>
+              <c>1322</c>
+              <c>Northwestern State</c>
+            </r>
+            <r>
+              <c>Penn</c>
+              <c>1335</c>
+              <c>Pennsylvania</c>
+            </r>
+            <r>
+              <c>Prairie View</c>
+              <c>1341</c>
+              <c>Prairie View A&amp;M</c>
+            </r>
+            <r>
+              <c>S Carolina State</c>
+              <c>1354</c>
+              <c>South Carolina State</c>
+            </r>
+            <r>
+              <c>S Dakota State</c>
+              <c>1355</c>
+              <c>South Dakota State</c>
+            </r>
+            <r>
+              <c>S Illinois</c>
+              <c>1356</c>
+              <c>Southern Illinois</c>
+            </r>
+            <r>
+              <c>Sam Houston State</c>
+              <c>1358</c>
+              <c>Sam Houston</c>
+            </r>
+            <r>
+              <c>Santa Barbara</c>
+              <c>1364</c>
+              <c>UC Santa Barbara</c>
+            </r>
+            <r>
+              <c>SE Louisiana</c>
+              <c>1368</c>
+              <c>Southeast Louisiana</c>
+            </r>
+            <r>
+              <c>SE Missouri State</c>
+              <c>1369</c>
+              <c>Southeast Missouri State</c>
+            </r>
+            <r>
+              <c>SF Austin</c>
+              <c>1372</c>
+              <c>Stephen F Austin</c>
+            </r>
+            <r>
+              <c>SF Austin</c>
+              <c>1372</c>
+              <c>Stephen F. Austin</c>
+            </r>
+            <r>
+              <c>Southern Univ</c>
+              <c>1380</c>
+              <c>Southern</c>
+            </r>
+            <r>
+              <c>St Joseph's PA</c>
+              <c>1386</c>
+              <c>St Joseph's</c>
+            </r>
+            <r>
+              <c>St Mary's CA</c>
+              <c>1388</c>
+              <c>Saint Mary's (CA)</c>
+            </r>
+            <r>
+              <c>St Mary's CA</c>
+              <c>1388</c>
+              <c>St Mary's (CA)</c>
+            </r>
+            <r>
+              <c>TAM C. Christi</c>
+              <c>1394</c>
+              <c>Texas A&amp;M Corpus Christi</c>
+            </r>
+            <r>
+              <c>TAM C. Christi</c>
+              <c>1394</c>
+              <c>Texas A&amp;M-Corpus Christi</c>
+            </r>
+            <r>
+              <c>TX Southern</c>
+              <c>1411</c>
+              <c>Texas Southern</c>
+            </r>
+            <r>
+              <c>UCF</c>
+              <c>1416</c>
+              <c>Central Florida</c>
+            </r>
+            <r>
+              <c>ULL</c>
+              <c>1418</c>
+              <c>Louisiana Lafayette</c>
+            </r>
+            <r>
+              <c>UT Arlington</c>
+              <c>1426</c>
+              <c>UT-Arlington</c>
+            </r>
+            <r>
+              <c>UT San Antonio</c>
+              <c>1427</c>
+              <c>UTSA</c>
+            </r>
+            <r>
+              <c>VA Commonwealth</c>
+              <c>1433</c>
+              <c>VCU</c>
+            </r>
+            <r>
+              <c>W Kentucky</c>
+              <c>1443</c>
+              <c>Western Kentucky</c>
+            </r>
+            <r>
+              <c>W Michigan</c>
+              <c>1444</c>
+              <c>Western Michigan</c>
+            </r>
+            <r>
+              <c>WI Green Bay</c>
+              <c>1453</c>
+              <c>Green Bay</c>
+            </r>
+            <r>
+              <c>WI Milwaukee</c>
+              <c>1454</c>
+              <c>Milwaukee</c>
+            </r>
+            <r>
+              <c>St Peters</c>
+              <c>1389</c>
+              <c>St Peters</c>
+            </r>
+            <r>
+              <c>Winthrop</c>
+              <c>1457</c>
+              <c>Wintrop</c>
+            </r>
+            <r>
+              <c>East Tennessee State</c>
+              <c>1190</c>
+              <c>East Tennessee State</c>
+            </r>
+            <r>
+              <c>UT San Antonio</c>
+              <c>1427</c>
+              <c>Texas San Antonio</c>
+            </r>
+            <r>
+              <c>Col Charleston</c>
+              <c>1158</c>
+              <c>Charleston</c>
+            </r>
+            <r>
+              <c>Troy</c>
+              <c>1407</c>
+              <c>Troy State</c>
+            </r>
+            <r>
+              <c>CS Fullerton</c>
+              <c>1168</c>
+              <c>Cal State Fullerton</c>
+            </r>
+            <r>
+              <c>ULL</c>
+              <c>1418</c>
+              <c>Louisiana</c>
+            </r>
+            <r>
+              <c>UNC Asheville</c>
+              <c>1421</c>
+              <c>UNC Ashville</c>
+            </r>
+            <r>
+              <c>UNC Wilmington</c>
+              <c>1423</c>
+              <c>NC Wilmington</c>
+            </r>
+          </Data>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxTextInput" />
+    </Node>
+    <Node ToolID="78">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Sort.Sort">
+        <Position x="1410" y="66" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <SortInfo locale="1033">
+            <Field field="Name" order="Ascending" />
+          </SortInfo>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>Name - Ascending</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSort" />
+    </Node>
+    <Node ToolID="79">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
+        <Position x="1554" y="126" />
+      </GuiSettings>
+      <Properties>
+        <Configuration joinByRecordPos="False">
+          <JoinInfo connection="Left">
+            <Field field="Name" />
+          </JoinInfo>
+          <JoinInfo connection="Right">
+            <Field field="teamname_edited" />
+          </JoinInfo>
+          <SelectConfiguration>
+            <Configuration outputConnection="Join">
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+          </SelectConfiguration>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJoin" />
+    </Node>
+    <Node ToolID="80">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="1638" y="246" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="Name" selected="True" />
+            <SelectField field="Odds" selected="True" />
+            <SelectField field="Year" selected="True" />
+            <SelectField field="id" selected="True" />
+            <SelectField field="*Unknown" selected="False" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="81">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Unique.Unique">
+        <Position x="1734" y="246" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <UniqueFields>
+            <Field field="Year" />
+            <Field field="id" />
+          </UniqueFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxUnique" />
+    </Node>
+    <Node ToolID="82">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="1638" y="126" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="True" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="id" selected="True" />
+            <SelectField field="Name" selected="True" />
+            <SelectField field="teamname" selected="False" />
+            <SelectField field="Year" selected="True" />
+            <SelectField field="Round" selected="False" />
+            <SelectField field="Odds" selected="True" />
+            <SelectField field="FileName" selected="False" />
+            <SelectField field="teamname_edited" selected="False" />
+            <SelectField field="*Unknown" selected="False" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="83">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Unique.Unique">
+        <Position x="1734" y="126" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <UniqueFields>
+            <Field field="id" />
+            <Field field="Year" />
+          </UniqueFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxUnique" />
+    </Node>
+    <Node ToolID="84">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Union.Union">
+        <Position x="1878" y="150" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <ByName_ErrorMode>Warning</ByName_ErrorMode>
+          <ByName_OutputMode>All</ByName_OutputMode>
+          <Mode>ByName</Mode>
+          <SetOutputOrder value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxUnion" />
+    </Node>
+    <Node ToolID="85">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Sort.Sort">
+        <Position x="1974" y="150" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <SortInfo locale="1033">
+            <Field field="id" order="Ascending" />
+            <Field field="Year" order="Ascending" />
+          </SortInfo>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>id - Ascending
+Year - Ascending</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSort" />
+    </Node>
+    <Node ToolID="93">
+      <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
+        <Position x="1278" y="318" width="132" height="52" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Text>Manually update dropped teams' names to align with Odds data</Text>
+          <Font name="Arial" size="8.25" style="0" />
+          <TextColor name="Black" />
+          <FillColor name="White" />
+          <Shape shape="0" />
+          <Justification Justification="4" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="94">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.TextInput.TextInput">
+        <Position x="1974" y="246" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <NumRows value="10" />
+          <Fields>
+            <Field name="School" />
+            <Field name="Former Conference" />
+            <Field name="New Conference" />
+            <Field name="Cutoff Year" />
+            <Field name="Cutoff Power 6" />
+          </Fields>
+          <Data>
+            <r>
+              <c>Butler</c>
+              <c>Atlantic 10</c>
+              <c>Big East</c>
+              <c>2013</c>
+              <c>1</c>
+            </r>
+            <r>
+              <c>Cincinnati</c>
+              <c>Conference USA</c>
+              <c>Big East</c>
+              <c>2005</c>
+              <c>1</c>
+            </r>
+            <r>
+              <c>Creighton</c>
+              <c>Missouri Valley</c>
+              <c>Big East</c>
+              <c>2013</c>
+              <c>1</c>
+            </r>
+            <r>
+              <c>DePaul</c>
+              <c>Conference USA</c>
+              <c>Big East</c>
+              <c>2005</c>
+              <c>1</c>
+            </r>
+            <r>
+              <c>Louisville</c>
+              <c>Conference USA</c>
+              <c>Big East</c>
+              <c>2005</c>
+              <c>1</c>
+            </r>
+            <r>
+              <c>Marquette</c>
+              <c>Conference USA</c>
+              <c>Big East</c>
+              <c>2005</c>
+              <c>1</c>
+            </r>
+            <r>
+              <c>TCU</c>
+              <c>Mountain West[46]</c>
+              <c>Big 12</c>
+              <c>2011</c>
+              <c>1</c>
+            </r>
+            <r>
+              <c>South Florida</c>
+              <c>Conference USA</c>
+              <c>Big East</c>
+              <c>2005</c>
+              <c>1</c>
+            </r>
+            <r>
+              <c>Utah</c>
+              <c>Mountain West</c>
+              <c>Pac-12</c>
+              <c>2010</c>
+              <c>1</c>
+            </r>
+            <r>
+              <c>Xavier</c>
+              <c>Atlantic 10</c>
+              <c>Big East</c>
+              <c>2013</c>
+              <c>1</c>
+            </r>
+          </Data>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxTextInput" />
+    </Node>
+    <Node ToolID="95">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="2082" y="246" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="School" selected="True" />
+            <SelectField field="Cutoff Year" selected="True" type="V_String" size="11" />
+            <SelectField field="Cutoff Power 6" selected="True" />
+            <SelectField field="*Unknown" selected="False" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="96">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="2082" y="150" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="*Unknown" selected="True" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="97">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
+        <Position x="2202" y="234" />
+      </GuiSettings>
+      <Properties>
+        <Configuration joinByRecordPos="False">
+          <JoinInfo connection="Left">
+            <Field field="Name" />
+          </JoinInfo>
+          <JoinInfo connection="Right">
+            <Field field="School" />
+          </JoinInfo>
+          <SelectConfiguration>
+            <Configuration outputConnection="Join">
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="Left_Year" selected="True" input="Left_" type="Double" size="8" />
+                <SelectField field="Right_Cutoff Year" selected="True" input="Right_" type="Double" size="8" />
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+          </SelectConfiguration>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJoin" />
+    </Node>
+    <Node ToolID="98">
+      <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
+        <Position x="1974" y="306" width="168" height="40" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Text>Power 6 adjustment to address historical conference alignment</Text>
+          <Font name="Arial" size="8.25" style="0" />
+          <TextColor name="Black" />
+          <FillColor name="White" />
+          <Shape shape="0" />
+          <Justification Justification="4" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="99">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="2322" y="234" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="if [Year] &lt; [Cutoff Year] then 0 else [Cutoff Power 6] endif" field="Power 6" size="8" type="Int64" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText><![CDATA[Power 6 = if [Year] < [Cutoff Year] then 0 else [Cutoff Power 6] endif
+]]></DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="100">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="2442" y="234" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="id" selected="True" />
+            <SelectField field="Name" selected="True" />
+            <SelectField field="Year" selected="True" />
+            <SelectField field="Odds" selected="True" />
+            <SelectField field="Power 6" selected="True" />
+            <SelectField field="*Unknown" selected="False" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="102">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="2442" y="114" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="replace([Name],&quot;State&quot;,&quot;St.&quot;)" field="Name" size="255" type="V_String" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText><![CDATA[Name = replace([Name],"State","St.")
+]]></DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="103">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+        <Position x="2322" y="402" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Passwords />
+          <File OutputFileName="" RecordLimit="" SearchSubDirs="False" FileFormat="25">..\NCAAM Power 6.xlsx|||`Power 6 Teams$`</File>
+          <FormatSpecificOptions>
+            <FirstRowData>False</FirstRowData>
+            <ImportLine>1</ImportLine>
+          </FormatSpecificOptions>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>NCAAM Power 6.xlsx
+Query=`Power 6 Teams$`</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="School" size="255" source="File: C:\Users\dongeonkim\Documents\MDCM\NCAAM Power 6.xlsx|||`Power 6 Teams$`" type="V_String" />
+            <Field name="Conference" size="255" source="File: C:\Users\dongeonkim\Documents\MDCM\NCAAM Power 6.xlsx|||`Power 6 Teams$`" type="V_String" />
+            <Field name="Power 6" source="File: C:\Users\dongeonkim\Documents\MDCM\NCAAM Power 6.xlsx|||`Power 6 Teams$`" type="Double" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+    </Node>
+    <Node ToolID="104">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="2478" y="402" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="School" selected="True" />
+            <SelectField field="Power 6" selected="True" />
+            <SelectField field="*Unknown" selected="False" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="105">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
+        <Position x="2718" y="186" />
+      </GuiSettings>
+      <Properties>
+        <Configuration joinByRecordPos="False">
+          <JoinInfo connection="Left">
+            <Field field="Name" />
+          </JoinInfo>
+          <JoinInfo connection="Right">
+            <Field field="School" />
+          </JoinInfo>
+          <SelectConfiguration>
+            <Configuration outputConnection="Join">
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="Left_id" selected="True" input="Left_" />
+                <SelectField field="Left_Name" selected="True" input="Left_" />
+                <SelectField field="Left_Year" selected="True" input="Left_" />
+                <SelectField field="Left_Odds" selected="True" input="Left_" />
+                <SelectField field="Right_Power 6" selected="True" input="Right_" />
+                <SelectField field="*Unknown" selected="False" />
+              </SelectFields>
+            </Configuration>
+          </SelectConfiguration>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJoin" />
+    </Node>
+    <Node ToolID="106">
+      <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
+        <Position x="2838" y="54" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <SummarizeFields>
+            <SummarizeField field="id" action="GroupBy" rename="id" />
+            <SummarizeField field="Name" action="GroupBy" rename="Name" />
+          </SummarizeFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxSpatialPluginsEngine.dll" EngineDllEntryPoint="AlteryxSummarize" />
+    </Node>
+    <Node ToolID="107">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Sort.Sort">
+        <Position x="2922" y="54" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <SortInfo locale="1033">
+            <Field field="id" order="Ascending" />
+          </SortInfo>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>id - Ascending</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSort" />
+    </Node>
+    <Node ToolID="108">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="2838" y="126" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="0" field="Power 6" size="8" type="Double" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText><![CDATA[Power 6 = 0
+]]></DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="110">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Union.Union">
+        <Position x="2946" y="186" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <ByName_ErrorMode>Warning</ByName_ErrorMode>
+          <ByName_OutputMode>All</ByName_OutputMode>
+          <Mode>ByName</Mode>
+          <SetOutputOrder value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxUnion" />
+    </Node>
+    <Node ToolID="111">
+      <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
+        <Position x="1098" y="66" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <SummarizeFields>
+            <SummarizeField field="Year" action="GroupBy" rename="Year" />
+            <SummarizeField field="Odds" action="MedianNo0" rename="Median Odds" />
+          </SummarizeFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxSpatialPluginsEngine.dll" EngineDllEntryPoint="AlteryxSummarize" />
+    </Node>
+    <Node ToolID="112">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="3042" y="186" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="if id='1427' then &quot;UTSA&quot; else [Name] endif" field="Name" size="255" type="V_String" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText><![CDATA[Name = if id='1427' then "UTSA" else [Name] endif
+]]></DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="113">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
+        <Position x="3162" y="186" />
+      </GuiSettings>
+      <Properties>
+        <Configuration joinByRecordPos="False">
+          <JoinInfo connection="Left">
+            <Field field="Year" />
+          </JoinInfo>
+          <JoinInfo connection="Right">
+            <Field field="Year" />
+          </JoinInfo>
+          <SelectConfiguration>
+            <Configuration outputConnection="Join">
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="Right_Year" selected="False" rename="Right_Year" input="Right_" />
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+          </SelectConfiguration>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJoin" />
+    </Node>
+    <Node ToolID="114">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="3246" y="186" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="if isnull([Odds]) then [Median Odds] else [Odds] endif" field="Odds" size="8" type="Double" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText><![CDATA[Odds = if isnull([Odds]) then [Median Odds] else [Odds] endif
+]]></DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="115">
+      <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
+        <Position x="3138" y="246" width="100" height="40" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Text>Impute median odds for missing odds</Text>
+          <Font name="Arial" size="8.25" style="0" />
+          <TextColor name="Black" />
+          <FillColor name="White" />
+          <Shape shape="0" />
+          <Justification Justification="4" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="117">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Sort.Sort">
+        <Position x="3810" y="162" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <SortInfo locale="1033">
+            <Field field="id" order="Ascending" />
+            <Field field="Year" order="Ascending" />
+          </SortInfo>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>id - Ascending
+Year - Ascending</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSort" />
+    </Node>
+    <Node ToolID="118">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.RecordID.RecordID">
+        <Position x="3918" y="162" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FieldName>RecordID</FieldName>
+          <StartValue>1</StartValue>
+          <FieldType>Int32</FieldType>
+          <FieldSize>6</FieldSize>
+          <Position>0</Position>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxRecordID" />
+    </Node>
+    <Node ToolID="119">
+      <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
+        <Position x="3402" y="198" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <SummarizeFields>
+            <SummarizeField field="id" action="GroupBy" rename="id" />
+            <SummarizeField field="Name" action="GroupBy" rename="Name" />
+          </SummarizeFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxSpatialPluginsEngine.dll" EngineDllEntryPoint="AlteryxSummarize" />
+    </Node>
+    <Node ToolID="120">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Unique.Unique">
+        <Position x="3618" y="198" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <UniqueFields>
+            <Field field="id" />
+          </UniqueFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxUnique" />
+    </Node>
+    <Node ToolID="121">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
+        <Position x="3714" y="162" />
+      </GuiSettings>
+      <Properties>
+        <Configuration joinByRecordPos="False">
+          <JoinInfo connection="Left">
+            <Field field="id" />
+          </JoinInfo>
+          <JoinInfo connection="Right">
+            <Field field="id" />
+          </JoinInfo>
+          <SelectConfiguration>
+            <Configuration outputConnection="Join">
+              <OrderChanged value="True" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="Left_id" selected="True" input="Left_" />
+                <SelectField field="Right_Name" selected="True" rename="teamname" input="Right_" />
+                <SelectField field="Left_Name" selected="False" input="Left_" />
+                <SelectField field="Left_Year" selected="True" input="Left_" />
+                <SelectField field="Left_Odds" selected="True" input="Left_" />
+                <SelectField field="Left_Power 6" selected="True" input="Left_" />
+                <SelectField field="Left_Median Odds" selected="False" input="Left_" />
+                <SelectField field="Right_id" selected="False" rename="Right_id" input="Right_" />
+                <SelectField field="*Unknown" selected="False" />
+              </SelectFields>
+            </Configuration>
+          </SelectConfiguration>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJoin" />
+    </Node>
+    <Node ToolID="122">
+      <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
+        <Position x="3402" y="258" width="144" height="40" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Text>Standardize team names</Text>
+          <Font name="Arial" size="8.25" style="0" />
+          <TextColor name="Black" />
+          <FillColor name="White" />
+          <Shape shape="0" />
+          <Justification Justification="4" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="123">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="4014" y="162" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="*Unknown" selected="True" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="124">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Sort.Sort">
+        <Position x="3510" y="198" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <SortInfo locale="1033">
+            <Field field="id" order="Ascending" />
+            <Field field="Name" order="Ascending" />
+          </SortInfo>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>id - Ascending
+Name - Ascending</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSort" />
+    </Node>
+    <Node ToolID="125">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+        <Position x="4110" y="162" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <TempFile>C:\Users\DONGEO~1\AppData\Local\Temp\Engine_61736_f1172b95db2ac0429d870363cdfdec1e_\Engine_61736_bbec415f99ef8d418258dea1db9d3c0e~.yxdb</TempFile>
+          <TempFileDataProfiling />
+          <Layout>
+            <ViewMode>Single</ViewMode>
+            <ViewSize value="100" />
+            <View1>
+              <DefaultTab>Profile</DefaultTab>
+              <Hints>
+                <Table />
+              </Hints>
+            </View1>
+            <View2 />
+          </Layout>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+    </Node>
+    <Node ToolID="127">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Sort.Sort">
+        <Position x="198" y="642" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <SortInfo locale="1033">
+            <Field field="slot" order="Ascending" />
+            <Field field="game_id" order="Ascending" />
+          </SortInfo>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>slot - Ascending
+game_id - Ascending</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSort" />
+    </Node>
+    <Node ToolID="129">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="438" y="642" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="left([slot],2)" field="round" size="1073741823" type="V_WString" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText><![CDATA[round = left([slot],2)
+]]></DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="130">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+        <Position x="558" y="642" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Mode>Simple</Mode>
+          <Simple>
+            <Operator>=</Operator>
+            <Field>round</Field>
+            <Operands>
+              <IgnoreTimeInDateTime>True</IgnoreTimeInDateTime>
+              <DateType>fixed</DateType>
+              <PeriodDate>2024-03-02 02:02:12</PeriodDate>
+              <PeriodType>
+              </PeriodType>
+              <PeriodCount>0</PeriodCount>
+              <Operand>R1</Operand>
+              <StartDate>2024-03-02 02:02:12</StartDate>
+              <EndDate>2024-03-02 02:02:12</EndDate>
+            </Operands>
+          </Simple>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>[round] = "R1"</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+    </Node>
+    <Node ToolID="131">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+        <Position x="678" y="810" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Mode>Simple</Mode>
+          <Simple>
+            <Operator>=</Operator>
+            <Field>round</Field>
+            <Operands>
+              <IgnoreTimeInDateTime>True</IgnoreTimeInDateTime>
+              <DateType>fixed</DateType>
+              <PeriodDate>2024-03-02 02:02:58</PeriodDate>
+              <PeriodType>
+              </PeriodType>
+              <PeriodCount>0</PeriodCount>
+              <Operand>R2</Operand>
+              <StartDate>2024-03-02 02:02:58</StartDate>
+              <EndDate>2024-03-02 02:02:58</EndDate>
+            </Operands>
+          </Simple>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>[round] = "R2"</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+    </Node>
+    <Node ToolID="132">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+        <Position x="810" y="882" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Mode>Simple</Mode>
+          <Simple>
+            <Operator>=</Operator>
+            <Field>round</Field>
+            <Operands>
+              <IgnoreTimeInDateTime>True</IgnoreTimeInDateTime>
+              <DateType>fixed</DateType>
+              <PeriodDate>2024-03-02 02:03:10</PeriodDate>
+              <PeriodType>
+              </PeriodType>
+              <PeriodCount>0</PeriodCount>
+              <StartDate>2024-03-02 02:03:10</StartDate>
+              <EndDate>2024-03-02 02:03:10</EndDate>
+              <Operand>R3</Operand>
+            </Operands>
+          </Simple>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>[round] = "R3"</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+    </Node>
+    <Node ToolID="133">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+        <Position x="942" y="942" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Mode>Simple</Mode>
+          <Simple>
+            <Operator>=</Operator>
+            <Field>round</Field>
+            <Operands>
+              <IgnoreTimeInDateTime>True</IgnoreTimeInDateTime>
+              <DateType>fixed</DateType>
+              <PeriodDate>2024-03-02 02:03:20</PeriodDate>
+              <PeriodType>
+              </PeriodType>
+              <PeriodCount>0</PeriodCount>
+              <StartDate>2024-03-02 02:03:20</StartDate>
+              <EndDate>2024-03-02 02:03:20</EndDate>
+              <Operand>R4</Operand>
+            </Operands>
+          </Simple>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>[round] = "R4"</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+    </Node>
+    <Node ToolID="134">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+        <Position x="1074" y="1002" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Mode>Simple</Mode>
+          <Simple>
+            <Operator>=</Operator>
+            <Field>round</Field>
+            <Operands>
+              <IgnoreTimeInDateTime>True</IgnoreTimeInDateTime>
+              <DateType>fixed</DateType>
+              <PeriodDate>2024-03-02 02:03:30</PeriodDate>
+              <PeriodType>
+              </PeriodType>
+              <PeriodCount>0</PeriodCount>
+              <Operand>R5</Operand>
+              <StartDate>2024-03-02 02:03:30</StartDate>
+              <EndDate>2024-03-02 02:03:30</EndDate>
+            </Operands>
+          </Simple>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>[round] = "R5"</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+    </Node>
+    <Node ToolID="135">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="330" y="642" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="True" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="game_id" selected="True" />
+            <SelectField field="team1_id" selected="True" />
+            <SelectField field="team1_teamname" selected="True" />
+            <SelectField field="team2_id" selected="True" />
+            <SelectField field="team2_teamname" selected="True" />
+            <SelectField field="season" selected="True" />
+            <SelectField field="team1_seed" selected="True" />
+            <SelectField field="team2_seed" selected="True" />
+            <SelectField field="team1_position" selected="True" />
+            <SelectField field="team2_position" selected="True" />
+            <SelectField field="strongseed" selected="True" />
+            <SelectField field="weakseed" selected="True" />
+            <SelectField field="team1_region" selected="True" />
+            <SelectField field="team2_region" selected="True" />
+            <SelectField field="slot" selected="True" />
+            <SelectField field="host" selected="True" />
+            <SelectField field="host_lat" selected="True" />
+            <SelectField field="host_long" selected="True" />
+            <SelectField field="team1_coach_id" selected="True" />
+            <SelectField field="team1_coach_name" selected="True" />
+            <SelectField field="team1_pt_school_ncaa" selected="True" />
+            <SelectField field="team1_pt_overall_ncaa" selected="True" />
+            <SelectField field="team1_pt_school_s16" selected="True" />
+            <SelectField field="team1_pt_overall_s16" selected="True" />
+            <SelectField field="team1_pt_school_ff" selected="True" />
+            <SelectField field="team1_pt_overall_ff" selected="True" />
+            <SelectField field="team1_pt_career_school_wins" selected="True" />
+            <SelectField field="team1_pt_career_school_losses" selected="True" />
+            <SelectField field="team1_pt_career_overall_losses" selected="True" />
+            <SelectField field="team1_pt_team_season_wins" selected="True" />
+            <SelectField field="team1_pt_team_season_losses" selected="True" />
+            <SelectField field="team1_pt_coach_season_wins" selected="True" />
+            <SelectField field="team1_pt_coach_season_losses" selected="True" />
+            <SelectField field="team1_pt_career_overall_wins" selected="True" />
+            <SelectField field="team2_coach_id" selected="True" />
+            <SelectField field="team2_coach_name" selected="True" />
+            <SelectField field="team2_pt_school_ncaa" selected="True" />
+            <SelectField field="team2_pt_overall_ncaa" selected="True" />
+            <SelectField field="team2_pt_school_s16" selected="True" />
+            <SelectField field="team2_pt_overall_s16" selected="True" />
+            <SelectField field="team2_pt_school_ff" selected="True" />
+            <SelectField field="team2_pt_overall_ff" selected="True" />
+            <SelectField field="team2_pt_career_school_wins" selected="True" />
+            <SelectField field="team2_pt_career_school_losses" selected="True" />
+            <SelectField field="team2_pt_career_overall_losses" selected="True" />
+            <SelectField field="team2_pt_team_season_wins" selected="True" />
+            <SelectField field="team2_pt_team_season_losses" selected="True" />
+            <SelectField field="team2_pt_coach_season_wins" selected="True" />
+            <SelectField field="team2_pt_coach_season_losses" selected="True" />
+            <SelectField field="team2_pt_career_overall_wins" selected="True" />
+            <SelectField field="team1_fg2pct" selected="True" />
+            <SelectField field="team1_fg3pct" selected="True" />
+            <SelectField field="team1_ftpct" selected="True" />
+            <SelectField field="team1_blockpct" selected="True" />
+            <SelectField field="team1_oppfg2pct" selected="True" />
+            <SelectField field="team1_oppfg3pct" selected="True" />
+            <SelectField field="team1_oppftpct" selected="True" />
+            <SelectField field="team1_oppblockpct" selected="True" />
+            <SelectField field="team1_f3grate" selected="True" />
+            <SelectField field="team1_oppf3grate" selected="True" />
+            <SelectField field="team1_arate" selected="True" />
+            <SelectField field="team1_opparate" selected="True" />
+            <SelectField field="team1_stlrate" selected="True" />
+            <SelectField field="team1_oppstlrate" selected="True" />
+            <SelectField field="team2_fg2pct" selected="True" />
+            <SelectField field="team2_fg3pct" selected="True" />
+            <SelectField field="team2_ftpct" selected="True" />
+            <SelectField field="team2_blockpct" selected="True" />
+            <SelectField field="team2_oppfg2pct" selected="True" />
+            <SelectField field="team2_oppfg3pct" selected="True" />
+            <SelectField field="team2_oppftpct" selected="True" />
+            <SelectField field="team2_oppblockpct" selected="True" />
+            <SelectField field="team2_f3grate" selected="True" />
+            <SelectField field="team2_oppf3grate" selected="True" />
+            <SelectField field="team2_arate" selected="True" />
+            <SelectField field="team2_opparate" selected="True" />
+            <SelectField field="team2_stlrate" selected="True" />
+            <SelectField field="team2_oppstlrate" selected="True" />
+            <SelectField field="team1_tempo" selected="True" />
+            <SelectField field="team1_adjtempo" selected="True" />
+            <SelectField field="team1_oe" selected="True" />
+            <SelectField field="team1_adjoe" selected="True" />
+            <SelectField field="team1_de" selected="True" />
+            <SelectField field="team1_adjde" selected="True" />
+            <SelectField field="team2_tempo" selected="True" />
+            <SelectField field="team2_adjtempo" selected="True" />
+            <SelectField field="team2_oe" selected="True" />
+            <SelectField field="team2_adjoe" selected="True" />
+            <SelectField field="team2_de" selected="True" />
+            <SelectField field="team2_adjde" selected="True" />
+            <SelectField field="team1_lat" selected="True" />
+            <SelectField field="team1_long" selected="True" />
+            <SelectField field="team2_lat" selected="True" />
+            <SelectField field="team2_long" selected="True" />
+            <SelectField field="team1_coaches_preseason" selected="True" />
+            <SelectField field="team2_coaches_preseason" selected="True" />
+            <SelectField field="team1_ap_preseason" selected="True" />
+            <SelectField field="team2_ap_preseason" selected="True" />
+            <SelectField field="team1_coaches_final" selected="True" />
+            <SelectField field="team2_coaches_final" selected="True" />
+            <SelectField field="team1_ap_final" selected="True" />
+            <SelectField field="team2_ap_final" selected="True" />
+            <SelectField field="*Unknown" selected="True" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="137">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.TextInput.TextInput">
+        <Position x="462" y="570" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <NumRows value="4" />
+          <Fields>
+            <Field name="drop_ids" />
+          </Fields>
+          <Data>
+            <r>
+              <c>1411</c>
+            </r>
+            <r>
+              <c>1369</c>
+            </r>
+            <r>
+              <c>1280</c>
+            </r>
+            <r>
+              <c>1305</c>
+            </r>
+          </Data>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxTextInput" />
+    </Node>
+    <Node ToolID="138">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
+        <Position x="678" y="594" />
+      </GuiSettings>
+      <Properties>
+        <Configuration joinByRecordPos="False">
+          <JoinInfo connection="Left">
+            <Field field="drop_ids" />
+          </JoinInfo>
+          <JoinInfo connection="Right">
+            <Field field="team2_id" />
+          </JoinInfo>
+          <SelectConfiguration>
+            <Configuration outputConnection="Join">
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+          </SelectConfiguration>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJoin" />
+    </Node>
+    <Node ToolID="139">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="558" y="570" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="drop_ids" selected="True" type="V_String" size="11" />
+            <SelectField field="*Unknown" selected="True" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="140">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
+        <Position x="774" y="702" />
+      </GuiSettings>
+      <Properties>
+        <Configuration joinByRecordPos="False">
+          <JoinInfo connection="Left">
+            <Field field="drop_ids" />
+          </JoinInfo>
+          <JoinInfo connection="Right">
+            <Field field="team2_id" />
+          </JoinInfo>
+          <SelectConfiguration>
+            <Configuration outputConnection="Join">
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+          </SelectConfiguration>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJoin" />
+    </Node>
+  </Nodes>
+  <Connections>
+    <Connection>
+      <Origin ToolID="1" Connection="Output" />
+      <Destination ToolID="3" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="2" Connection="OutputData" />
+      <Destination ToolID="5" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="3" Connection="Output" />
+      <Destination ToolID="4" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="4" Connection="Output" />
+      <Destination ToolID="2" Connection="Control" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="5" Connection="Output" />
+      <Destination ToolID="6" Connection="Targets" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="6" Connection="Output" />
+      <Destination ToolID="7" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="7" Connection="Output" />
+      <Destination ToolID="8" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="8" Connection="True" />
+      <Destination ToolID="9" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="9" Connection="Output" />
+      <Destination ToolID="46" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="15" Connection="Output" />
+      <Destination ToolID="28" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="15" Connection="Output" />
+      <Destination ToolID="29" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="16" Connection="Output" />
+      <Destination ToolID="33" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="16" Connection="Output" />
+      <Destination ToolID="34" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="16" Connection="Output" />
+      <Destination ToolID="127" Connection="Input" />
+    </Connection>
+    <Connection name="#1">
+      <Origin ToolID="28" Connection="Output" />
+      <Destination ToolID="30" Connection="Input" />
+    </Connection>
+    <Connection name="#2">
+      <Origin ToolID="29" Connection="Output" />
+      <Destination ToolID="30" Connection="Input" />
+    </Connection>
+    <Connection name="#3">
+      <Origin ToolID="33" Connection="Output" />
+      <Destination ToolID="30" Connection="Input" />
+    </Connection>
+    <Connection name="#4">
+      <Origin ToolID="34" Connection="Output" />
+      <Destination ToolID="30" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="30" Connection="Output" />
+      <Destination ToolID="31" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="31" Connection="Output" />
+      <Destination ToolID="32" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="32" Connection="Unique" />
+      <Destination ToolID="61" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="46" Connection="True" />
+      <Destination ToolID="50" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="46" Connection="True" />
+      <Destination ToolID="111" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="50" Connection="Output" />
+      <Destination ToolID="73" Connection="Left" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="75" Connection="Output" />
+      <Destination ToolID="73" Connection="Right" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="61" Connection="Output" />
+      <Destination ToolID="75" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="73" Connection="Left" />
+      <Destination ToolID="78" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="73" Connection="Join" />
+      <Destination ToolID="80" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="77" Connection="Output" />
+      <Destination ToolID="79" Connection="Right" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="78" Connection="Output" />
+      <Destination ToolID="79" Connection="Left" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="79" Connection="Join" />
+      <Destination ToolID="82" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="80" Connection="Output" />
+      <Destination ToolID="81" Connection="Input" />
+    </Connection>
+    <Connection name="#2">
+      <Origin ToolID="81" Connection="Unique" />
+      <Destination ToolID="84" Connection="Input" />
+    </Connection>
+    <Connection name="#1">
+      <Origin ToolID="83" Connection="Unique" />
+      <Destination ToolID="84" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="82" Connection="Output" />
+      <Destination ToolID="83" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="84" Connection="Output" />
+      <Destination ToolID="85" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="85" Connection="Output" />
+      <Destination ToolID="96" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="94" Connection="Output" />
+      <Destination ToolID="95" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="95" Connection="Output" />
+      <Destination ToolID="97" Connection="Right" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="96" Connection="Output" />
+      <Destination ToolID="97" Connection="Left" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="97" Connection="Join" />
+      <Destination ToolID="99" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="97" Connection="Left" />
+      <Destination ToolID="102" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="99" Connection="Output" />
+      <Destination ToolID="100" Connection="Input" />
+    </Connection>
+    <Connection name="#3">
+      <Origin ToolID="100" Connection="Output" />
+      <Destination ToolID="110" Connection="Input" />
+    </Connection>
+    <Connection name="#1">
+      <Origin ToolID="105" Connection="Join" />
+      <Destination ToolID="110" Connection="Input" />
+    </Connection>
+    <Connection name="#2">
+      <Origin ToolID="108" Connection="Output" />
+      <Destination ToolID="110" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="102" Connection="Output" />
+      <Destination ToolID="105" Connection="Left" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="104" Connection="Output" />
+      <Destination ToolID="105" Connection="Right" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="103" Connection="Output" />
+      <Destination ToolID="104" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="105" Connection="Left" />
+      <Destination ToolID="106" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="105" Connection="Left" />
+      <Destination ToolID="108" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="106" Connection="Output" />
+      <Destination ToolID="107" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="110" Connection="Output" />
+      <Destination ToolID="112" Connection="Input" />
+    </Connection>
+    <Connection Wireless="True">
+      <Origin ToolID="111" Connection="Output" />
+      <Destination ToolID="113" Connection="Right" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="112" Connection="Output" />
+      <Destination ToolID="113" Connection="Left" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="113" Connection="Join" />
+      <Destination ToolID="114" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="114" Connection="Output" />
+      <Destination ToolID="119" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="114" Connection="Output" />
+      <Destination ToolID="121" Connection="Left" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="120" Connection="Unique" />
+      <Destination ToolID="121" Connection="Right" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="117" Connection="Output" />
+      <Destination ToolID="118" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="118" Connection="Output" />
+      <Destination ToolID="123" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="119" Connection="Output" />
+      <Destination ToolID="124" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="121" Connection="Join" />
+      <Destination ToolID="117" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="123" Connection="Output" />
+      <Destination ToolID="125" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="124" Connection="Output" />
+      <Destination ToolID="120" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="127" Connection="Output" />
+      <Destination ToolID="135" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="129" Connection="Output" />
+      <Destination ToolID="130" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="130" Connection="False" />
+      <Destination ToolID="131" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="130" Connection="True" />
+      <Destination ToolID="138" Connection="Right" />
+    </Connection>
+    <Connection Wireless="True">
+      <Origin ToolID="139" Connection="Output" />
+      <Destination ToolID="138" Connection="Left" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="131" Connection="False" />
+      <Destination ToolID="132" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="131" Connection="True" />
+      <Destination ToolID="140" Connection="Right" />
+    </Connection>
+    <Connection Wireless="True">
+      <Origin ToolID="139" Connection="Output" />
+      <Destination ToolID="140" Connection="Left" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="132" Connection="False" />
+      <Destination ToolID="133" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="133" Connection="False" />
+      <Destination ToolID="134" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="135" Connection="Output" />
+      <Destination ToolID="129" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="137" Connection="Output" />
+      <Destination ToolID="139" Connection="Input" />
+    </Connection>
+  </Connections>
+  <Properties>
+    <Memory default="True" />
+    <GlobalRecordLimit value="0" />
+    <TempFiles default="True" />
+    <Annotation on="True" includeToolName="False" />
+    <ConvErrorLimit value="10" />
+    <ConvErrorLimit_Stop value="False" />
+    <CancelOnError value="False" />
+    <DisableBrowse value="False" />
+    <EnablePerformanceProfiling value="False" />
+    <RunWithE2 value="True" />
+    <PredictiveToolsCodePage value="1252" />
+    <DisableAllOutput value="False" />
+    <ShowAllMacroMessages value="False" />
+    <ShowConnectionStatusIsOn value="True" />
+    <ShowConnectionStatusOnlyWhenRunning value="True" />
+    <ZoomLevel value="0" />
+    <LayoutType>Horizontal</LayoutType>
+    <MetaInfo>
+      <NameIsFileName value="True" />
+      <Name>Odds</Name>
+      <Description />
+      <RootToolName />
+      <ToolVersion />
+      <ToolInDb value="False" />
+      <CategoryName />
+      <SearchTags />
+      <Author />
+      <Company />
+      <Copyright />
+      <DescriptionLink actual="" displayed="" />
+      <Example>
+        <Description />
+        <File />
+      </Example>
+      <WorkflowId value="b0391d99-0a9d-4a42-b652-b98f2e09f9a9" />
+      <Telemetry>
+        <PreviousWorkflowId value="3977b102-0447-4deb-b001-d5d7750f03cf" />
+        <OriginWorkflowId value="3977b102-0447-4deb-b001-d5d7750f03cf" />
+      </Telemetry>
+    </MetaInfo>
+    <Events>
+      <Enabled value="True" />
+    </Events>
+  </Properties>
+</AlteryxDocument>
